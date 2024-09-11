@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stepper Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+</head>
+<style>
+
+
+  .cube div {
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      
+  
+  }
+  .cube__face {
+            position: absolute;
+            width:  120px;
+            height: 120px;
+        }
+  .front  { transform: translateZ(50px); }
+  .back   { transform: rotateY(180deg) translateZ(50px); }
+  .right  { transform: rotateY(90deg) translateZ(50px); }
+  .left   { transform: rotateY(-90deg) translateZ(50px); }
+  .top    { transform: rotateX(90deg) translateZ(50px); }
+  .bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+  @keyframes rotate {
+      from { transform: rotateX(-30deg) rotateY(-45deg); }
+      to { transform: rotateX(-30deg) rotateY(315deg); }
+  }
+</style>
+<body>
+  <div class="hero"> 
+  <pointer-particles></pointer-particles> 
+    <div class="hero__title">
+     
+      <div class="container">
+        <form id="multi-step-form" class="form">
+          <div class="upper-text">
+          <span class="text-mono text-gray-light-mktg">Welcome to  Name!  </span>
+          <span class="text-mono text-gray-light-mktg">Let’s begin the adventure</span>
+          </div>
+          <div class="step step-1">
+            <label for="email" class="text-info signup-text-prompt">Enter your email<span class="text-danger">*</span></label>
+            <div class="form-group">
+                <span class="arrow-right"><i class="fa-solid fa-arrow-right"></i></span>
+                <input type="email" class="form-control" id="email" autocomplete="off" placeholder="Enter your email">
+                <button type="button" class="btn" id="continue-btn-1">Continue</button>
+            </div>
+            <div class="invalid-feedback">Please enter a valid email address.</div>
+        </div>
+        <div class="step step-2" style="display: none;">
+            <label for="name" class="text-info signup-text-prompt">Enter your name<span class="text-danger">*</span></label>
+            <div class="form-group">
+                <span class="arrow-right"><i class="fa-solid fa-arrow-right"></i></span>
+                <input type="text" class="form-control" id="name" autocomplete="off" placeholder="Enter your name">
+                <button type="button" class="btn" id="continue-btn-2">Continue</button>
+            </div>
+            <div class="invalid-feedback">Please enter a valid name.</div>
+        </div>
+        <div class="step step-3" style="display: none;">
+            <label for="last-name" class="text-info signup-text-prompt">Enter your last name<span class="text-danger">*</span></label>
+            <div class="form-group">
+                <span class="arrow-right"><i class="fa-solid fa-arrow-right"></i></span>
+                <input type="text" class="form-control" id="last-name" autocomplete="off" placeholder="Enter your last name">
+                <button type="button" class="btn" id="continue-btn-3">Continue</button>
+            </div>
+            <div class="invalid-feedback">Please enter a valid last name.</div>
+        </div>
+        </form>
+    </div>
+    <div id="success-modal" class="modal" style="display: none;">
+      <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <p>You've successfully completed all steps!</p>
+      </div>
+  </div>
+    </div>
+    <div id="cube-container"></div>
+  </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/particle.js"></script>
+    <script src="assets/js/form.js"></script>
+</body>
+
+</html>
