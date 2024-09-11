@@ -73,6 +73,7 @@ sup {
     color: #ea4aaa;
     min-width: 14px;
     font-size: 14px;
+    
 }
 .text-danger {
     color: #00cfc8;
@@ -93,10 +94,16 @@ sup {
 .form-control::placeholder {
     color: #627597;
 }
-
+.fa-check{
+    color: #00cfc8;
+    font-size: 16px;
+}
 .invalid-feedback {
     display: none;
+    font-size: 12px;
     color: #ff4d4d;
+    margin-top: 10px;
+    margin-left: 26px;
 }
 .modal {
     position: fixed;
